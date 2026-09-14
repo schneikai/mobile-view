@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         BM mobile viewport preview
-// @namespace    kai.bettermarks.local
+// @name         mobile-view
+// @namespace    https://github.com/schneikai/mobile-view
 // @version      5.0.0
-// @description  Rotate the bm-mifro dev server through phone / tablet / desktop, one week each, so mobile bugs get noticed. A draggable button opens a menu to override the current week; it snaps back to the rotation next week. Personal, browser-only, no repo changes.
+// @description  Rotate a web app through phone / tablet / desktop viewports, one week each, so mobile layout bugs get noticed. A draggable button overrides the current week.
 // @author       Kai
 // @homepageURL  https://github.com/schneikai/mobile-view
 // @supportURL   https://github.com/schneikai/mobile-view/issues
@@ -21,16 +21,13 @@
  * Phone / tablet weeks: the app's entry scripts are removed so it never boots in
  * the top window; instead a full-window iframe overlay holds a device-sized,
  * sandboxed copy of the app (its own viewport, so real media queries fire). The
- * tab keeps the real app URL, so a browser refresh reloads and re-shells.
+ * tab keeps the real URL, so a browser refresh reloads and re-frames.
  * Desktop weeks: the app runs normally.
  *
- * In every mode a small draggable button (bottom-left by default) opens a menu
- * to switch view. A pick overrides the *current* week only (stored with the week
- * id in GM storage, which survives the changing per-worktree URLs); next week the
- * rotation resumes. The button position is remembered too.
+ * A small draggable button opens a menu to switch view. A pick overrides the
+ * current week only (kept in GM storage); next week the rotation resumes.
  *
- * Note: real narrow viewport (layout/breakpoints), not touch or device-pixel-
- * ratio; use DevTools device mode for those.
+ * Real narrow viewport (layout/breakpoints), not touch or device-pixel-ratio.
  */
 (function () {
   'use strict';
