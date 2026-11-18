@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         mobile-view
 // @namespace    https://github.com/schneikai/mobile-view
-// @version      5.0.0
+// @version      5.0.1
 // @description  Rotate a web app through phone / tablet / desktop viewports, one week each, so mobile layout bugs get noticed. A draggable button overrides the current week.
 // @author       Kai
 // @homepageURL  https://github.com/schneikai/mobile-view
@@ -112,7 +112,7 @@
     var css =
       'html,body{margin:0;height:100%;box-sizing:border-box;padding:16px;background:#1e1e24;' +
       'display:flex;align-items:center;justify-content:center;overflow:auto;}' +
-      '#frame{background:#fff;border:0;border-radius:24px;box-shadow:0 12px 40px rgba(0,0,0,.5);}';
+      '#frame{background:#fff;border:0;box-shadow:0 12px 40px rgba(0,0,0,.5);}';
     // Cage the app: no 'allow-top-navigation', so its auth-error redirect can't
     // escape the frame.
     var sandbox =
